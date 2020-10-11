@@ -5,6 +5,7 @@ const server = http.createServer((req, res) => {
   const method = req.method;
 
   if (url === "/") {
+    res.setHeader("Content-Type", "text/html");
     res.write(`
         <html>
             <head>
@@ -20,7 +21,7 @@ const server = http.createServer((req, res) => {
             </body>
         </html>   
     `);
-    res.end();
+    return res.end();
   }
 
   if (url === "/create-user" && method === "POST") {
@@ -32,7 +33,8 @@ const server = http.createServer((req, res) => {
 
     req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
-      console.log(parsedBody);
+      const name = parsedBody.split("=")[1];
+      console.log(name);
     });
 
     res.statusCode = 302;
@@ -41,6 +43,7 @@ const server = http.createServer((req, res) => {
   }
 
   if (url === "/users") {
+    res.setHeader("Content-Type", "text/html");
     res.write(`
         <html>
             <head>
@@ -55,8 +58,9 @@ const server = http.createServer((req, res) => {
                 </ul>
             </body>
         </html>   
-  `);
-    res.end();
+        
+    `);
+    return res.end();
   }
 });
 

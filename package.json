@@ -1,0 +1,23 @@
+{
+  "name": "initial-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon node-raw-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabriel-A-Rocha/nodejs-complete-guide.git"
+  },
+  "author": "Gabriel-A-Rocha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabriel-A-Rocha/nodejs-complete-guide/issues"
+  },
+  "homepage": "https://github.com/Gabriel-A-Rocha/nodejs-complete-guide#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

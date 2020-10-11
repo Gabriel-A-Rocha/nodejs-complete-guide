@@ -1,3 +1,5 @@
+// Understanding copies of primitive/reference types
+
 let name = "Gabriel";
 let copyName = name;
 
