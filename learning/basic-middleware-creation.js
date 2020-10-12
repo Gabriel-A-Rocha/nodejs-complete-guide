@@ -3,14 +3,14 @@
 const express = require("express");
 const app = express();
 
-app.use("/route1", (req, res, next) => {
+app.use((req, res, next) => {
   console.log("Middleware 1 activated");
-  res.send("<h1>Middleware 1 activated</h1>");
+  next();
 });
 
-app.use("/route2", (req, res, next) => {
+app.use((req, res, next) => {
   console.log("Middleware 2 activated");
-  res.send("<h1>Middleware 2 activated</h1>");
+  next();
 });
 
 app.use("/users", (req, res, next) => {
