@@ -21,14 +21,18 @@ const requestHandler = (req, res) => {
 
   if (url === "/message" && method === "POST") {
     const body = [];
+
     // accept incoming data
     req.on("data", (chunk) => {
       body.push(chunk);
     });
+
     // end of transfer
     return req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split("=")[1];
+      console.log(message);
+
       fs.writeFile("message.txt", message, (err) => {
         res.statusCode = 302;
         res.setHeader("Location", "/");
@@ -46,11 +50,3 @@ const requestHandler = (req, res) => {
 };
 
 module.exports = requestHandler;
-
-module.exports = {
-  handler: requestHandler,
-  someText: "Hard coded text",
-};
-
-exports.handler = requestHandler;
-exports.someText = "Hard coded text";
