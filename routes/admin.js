@@ -13,7 +13,7 @@ router.get("/add-product", (req, res, next) => {
     pageTitle: "Add Product",
     productCSS: true,
     formsCSS: true,
-    activeAddProduct: true
+    activeAddProduct: true,
   });
 });
 
