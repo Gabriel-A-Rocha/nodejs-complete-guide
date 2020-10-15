@@ -1,0 +1,14 @@
+{
+  "colorTabs.config": [
+    {
+      "regex": "controllers\\.*",
+      "color": "#5B5DA4",
+      "label": "Controllers"
+    },
+    {
+      "regex": "models\\.*",
+      "color": "#60B9F6",
+      "label": "Models"
+    }
+  ]
+}
