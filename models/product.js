@@ -37,12 +37,24 @@ module.exports = class Product {
           console.log(err);
         });
       } else {
+        // if it's a new product
         this.id = Math.random().toString();
         products.push(this);
+
         fs.writeFile(filePath, JSON.stringify(products), (err) => {
           console.log(err);
         });
       }
+    });
+  }
+
+  static deleteById(prodId) {
+    getProductsFromFile((products) => {
+      // remove product from the array and overwrite file
+      const updatedProducts = products.filter((p) => p.id !== prodId);
+      fs.writeFile(filePath, JSON.stringify(updatedProducts), (err) => {
+        console.log(err);
+      });
     });
   }
 

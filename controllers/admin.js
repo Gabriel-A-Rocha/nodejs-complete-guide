@@ -30,7 +30,7 @@ exports.postEditProduct = (req, res) => {
 
   updatedProduct.save();
 
-  res.redirect("/");
+  res.redirect("/admin/products");
 };
 
 exports.getEditProduct = (req, res, next) => {
@@ -60,4 +60,13 @@ exports.getProducts = (req, res) => {
       path: "/admin/products",
     });
   });
+};
+
+exports.postDeleteProduct = (req, res) => {
+  const productId = req.body.productId;
+  console.log(productId);
+
+  Product.deleteById(productId);
+
+  res.redirect("/");
 };
