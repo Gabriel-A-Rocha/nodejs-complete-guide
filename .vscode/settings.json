@@ -10,5 +10,10 @@
       "color": "#60B9F6",
       "label": "Models"
     }
-  ]
+  ],
+  "workbench.colorCustomizations": {
+    "tab.activeBorder": "#5B5DA4",
+    "statusBar.background": "#5B5DA4",
+    "statusBar.foreground": "#ffffff"
+  }
 }
